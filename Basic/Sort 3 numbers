@@ -1,0 +1,24 @@
+- 문제 -
+숫자 3개를 받고 오름차순으로 정렬하기
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+    
+  int a, b, c = 0;
+  cin >> a >> b >> c;
+  
+  int d, e, f; // 크기순으로 출력할 세 수
+  
+  d = min({a,b,c}); // <algorithm> 헤더파일 기능 사용. a,b,c 중 가장 작은 값 찾아줌
+  f = max({a,b,c});
+  e = a + b + c - d - f;
+  
+  cout << d << ' ' << e << ' ' << f;
+    
+  return 0;
+}
