@@ -1,0 +1,31 @@
+- 문제 -
+4개의 윷 값을 3번 받고, 배(0), 등(1)
+도(0111) 개(0011) 걸(0001) 윷(0000) 모(1111)
+도-A 개-B 걸-C 윷-E 모-D 를 출력
+
+- 후기 -
+string 의 각 01234 인덱스에 접근해서 문자를 출력하는게 신기했음   
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int result, input; // for문에서 반복될 때 마다 초기화 되면 안되기 때문에 main 외부에 선언
+string res = "DCBAE";
+
+int main(void)
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    for(int r=0 ; r<3 ; r++) (3개의 결과를 출력하기 위해)
+    {
+        result = 0;
+        for(int c=0 ; c<4 ; c++) // 각 윷(0 or 1) 입력
+        {
+            cin >> input;
+            result += input;
+        }
+        cout << res[result] << '\n';
+    }    
+}
