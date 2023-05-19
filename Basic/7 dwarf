@@ -1,0 +1,45 @@
+- 문제 -
+일곱 난쟁이가 갑자기 9명이 됐다.
+원래 일곱 난쟁이들의 키의 합은 100이다.
+원래 일곱 난쟁이들이 누군지 찾자.
+
+- 입력 -
+9개의 줄에 거쳐 각 난쟁이 키가 주어진다. 각 키는 100을 넘지 않으며 키는 모두 다르다.
+
+- 출력 -
+일곱 난쟁이의 키를 오름차순으로 출력한다.
+
+- 후기 -
+너무 어려웠다. 나중에 해설을 기반으로 꼭 다시 풀어보자.
+
+int num[9], result[7];
+
+int main(void) {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+    
+  for(int i=0 ; i<9 ; i++) cin >> num[i];
+    
+  // 9명 중 2명을 뺀 모든 조합 고려
+  for(int a=0 ; a<8 ; a++)
+  {
+    int total = 0;
+        
+    for(int b=a+1 ; b<9 ; b++)
+    {
+      total = 0;
+            
+      // 나머지 7명 저장
+      for(int c=0,i=0 ; c<9 ; c++) if(c!=a && c!=b) result[i++] = num[c];
+      for(int i=0 ; i<7 ; i++) total += result[i];
+            
+      // 7명 키의 합이 100인 경우
+      if(total == 100) break;
+    }
+    if(total == 100) break;
+  }
+    
+  // 정렬 후 출력
+  sort(result, result + 7);
+  for(int i = 0; i < 7; i++) cout << result[i] << "\n";
+}
