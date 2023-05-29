@@ -4,7 +4,7 @@
 
 
 #include <iostream>
-#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int freq[26]; // 각 알파벳 소문자 저장
