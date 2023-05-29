@@ -1,3 +1,7 @@
+- 문제 -
+세 개의 자연수 A,B,C 를 입력받아서 곱한 결과값에 0~9 까지의 숫자가 각각 몇 번 쓰였는지 구하기
+
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
