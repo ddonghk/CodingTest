@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(void)
+{
+	int A, B, C = 0;
+	cin >> A >> B >> C;
+    
+	int result = A * B * C;
+	
+	int d[10] = {};
+
+	while (result > 0)
+	{
+		d[result % 10]++; // result의 마지막 자리 숫자 추출하여 해당 인덱스 1 증가 (ex: 123이면 3이 나옴)
+		result /= 10;  // 다음 자릿수로 이동
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		cout << d[i] << '\n';
+	}
+}
